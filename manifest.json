@@ -1,0 +1,31 @@
+{
+  "manifest_version": 2,
+  "name": "YouTube Shorts Blocker",
+  "version": "1.3",
+  "description": "A complete blocker for YouTube Shorts by removing elements in real-time.",
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "*://www.youtube.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["*://www.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "48": "icon48.png",
+    "128": "icon128.png"
+  },
+  "applications": {
+    "gecko": {
+      "id": "shortsblocker@example.com"
+    }
+  }
+}
